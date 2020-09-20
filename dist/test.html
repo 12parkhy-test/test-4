@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='num-cells'></div>
+    <div id="test"></div>
+    <div>
+        <label>Number of Rows:</label>
+        <input type='number' min='1' name='numRows' value=50 onchange="change(this.name, this.value)" />
+        <label>Number of Columns:</label>
+        <input type='number' min='1' name='numCols' value=50 onchange="change(this.name, this.value)" />
+        <button onclick="changeNumCells()">Change Number of Cells</button>
+    </div>
+    <hr />
+    <div style='margin-bottom: 10px;'>
+        <button onclick="showResults()">Show Results</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <p>Before you click the "Show Results" button, set the number of rows and columns by clicking "Change Number of Cells" button.</p>
+    <p>Then, click "Show Results" button to view the cells robots had access to.</p>
+    <p>After you clicked the button, please wait untill you see the text "Done!".</p>
+    <svg width="1000px" height="100px">
+        <rect x="10" y="0" height="15" width="15" fill="#c542f5" />
+        <rect x="10" y="20" height="15" width="15" fill="grey" />
+        <rect x="10" y="40" height="15" width="15" fill="red" />
+        <rect x="10" y="60" height="15" width="15" fill="yellow" />
+    </svg>
+    <div style='font-weight: bold;'><span id='status'></span><span id='num-visited'></span><span id='perc-area'></span></div>
+    <canvas id="canvas" width="1000" height='800'></canvas>
+    <script defer src="https://d3js.org/d3.v6.min.js"></script>
+    <script defer src='test.js'></script>
+</body>
+
+</html>
